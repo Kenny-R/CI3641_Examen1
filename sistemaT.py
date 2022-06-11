@@ -43,8 +43,7 @@ class sistemaT:
             if seguir == False: break
     
     def determinar_nuevos_traductores(self):
-        cont = 0
-        while True and cont < 10:
+        while True:
             seguir = False
             saltar = False
             for i in self.traductores:             
@@ -70,7 +69,6 @@ class sistemaT:
                             input()
                             """
                             seguir = True
-            cont += 1
             if seguir == False: break
     
     def ejecutar_programa(self,nombre):
