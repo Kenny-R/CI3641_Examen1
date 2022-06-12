@@ -47,11 +47,14 @@ class buddySystem:
             if 2**i >= cantidad:
                 orden = i
 
-        if orden == -1: return
-
+        if orden == -1:
+            print("No se encontro espacio libre suficiente")
+            return
+        
         self.asignar_espacio(nombre,cantidad,orden)
 
         self.disponible -= cantidad
+        self.combinar_espacios()
         self.eliminar_listas_vacias() 
     
     
@@ -99,7 +102,7 @@ class buddySystem:
         if orden not in self.espacios_libres: self.espacios_libres[orden] = []
         
         self.espacios_libres[orden].append(intervalo)
-        
+        self.disponible += 2**orden
         self.combinar_espacios()
     
     def combinar_espacios(self): 
@@ -134,7 +137,7 @@ class buddySystem:
 
     def mostrar_espacios_libres(self):
         for i in self.espacios_libres.keys():           
-            print(f"{i}: ", ", ".join(map(str,self.espacios_libres[i])))
+            print(f"bloques de tamaño {2**i}: ", ", ".join(map(str,self.espacios_libres[i])))
     
     def eliminar_listas_vacias(self):
         claves_a_eliminar = []
