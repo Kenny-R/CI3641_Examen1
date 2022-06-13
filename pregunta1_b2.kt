@@ -1,3 +1,15 @@
+/**
+ * Algoritmo clasico de multiplicacion de matrices
+ * 
+ * Parametros:
+ *      A: Matriz de dimension PxM
+ *      B: Matriz de dimension MxN
+ * 
+ * Return:  Devuelve una matriz de dimension PxN resultado de
+ *          Multiplicar A y B
+ */
+
+
 fun mul_matrix(A:Array<Array<Int>>,B:Array<Array<Int>>): Array<Array<Int>> {
     if (A[0].size != B.size) {
         println("Las dimensiones de las matrices no son compatibles")

@@ -1,3 +1,14 @@
+/**
+ * Version recursiva de la operacion a^b mod c
+ * 
+ * Parametros:
+ *      a: Numero entero mayor o igual que cero
+ *      b: Numero entero mayor o igual que cero 
+ *      c: Numero entero mayor o igual que 2
+ * 
+ * Return: Devuelve un numero entero resultado de aplicar
+ *         la operacion a^b mod c.     
+ */
 fun potencia_modulada(a:Int, b:Int, c:Int):Int {
     if (b == 0){
         return 1
@@ -5,6 +16,7 @@ fun potencia_modulada(a:Int, b:Int, c:Int):Int {
         return ((a % c)*potencia_modulada(a,b-1,c)) % c
     } 
 }
+
 fun main() {
     println("Casos de prueba simples")
 

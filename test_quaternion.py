@@ -1,6 +1,5 @@
 import quaternion as q
 
-
 def test_suma():
     assert q.quaternion(1,2,3,4) + q.quaternion(1,2,3,4) == q.quaternion(2,4,6,8)
     assert q.quaternion(1)+2 == q.quaternion(3)
